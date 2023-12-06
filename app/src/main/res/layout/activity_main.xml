@@ -12,7 +12,7 @@
         android:layout_height="match_parent"
         android:contentDescription="@string/banner_text"
         android:scaleType="centerCrop"
-        android:src="@drawable/movie_lists"
+        android:src="@drawable/movie_banner"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -28,24 +28,24 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
+    <!--<ImageView
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:contentDescription="@string/logo"
-        android:src="@drawable/monaco_colored"
+        android:src="@drawable/logo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.10"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.01" />
+        app:layout_constraintVertical_bias="0.01" />-->
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/timesbd"
+        android:fontFamily="@font/sf_ui"
         android:text="@string/get_started"
-        android:textSize="30sp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.50"
@@ -55,8 +55,8 @@
 
     <TextView
         android:layout_width="320dp"
-        android:textSize="30dp"
-        android:fontFamily="@font/timesbd"
+        android:textSize="30sp"
+        android:fontFamily="@font/sf_ui"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

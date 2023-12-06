@@ -13,6 +13,11 @@
         android:theme="@style/Theme.Movies_Ticketing_Aquino_Villaester_EDP"
         tools:targetApi="31">
         <activity
+            android:name=".MovieLists"
+            android:exported="false"
+            android:label="@string/title_activity_movie_lists"
+            android:theme="@style/Theme.Movies_Ticketing_Aquino_Villaester_EDP.NoActionBar" />
+        <activity
             android:name=".BookingActivity"
             android:exported="false" />
         <activity
