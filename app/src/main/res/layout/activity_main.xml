@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/material_dynamic_primary90"
     tools:context=".MainActivity">
 
     <ImageView
@@ -20,23 +21,50 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:contentDescription="@string/vignette_effect"
         android:src="@drawable/vignette_overlay"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:contentDescription="@string/vignette_effect" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:layout_width="150dp"
         android:layout_height="wrap_content"
+        android:contentDescription="@string/logo"
+        android:src="@drawable/monaco_colored"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.10"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:src="@drawable/monaco_colored"
-        android:contentDescription="@string/logo"
-        app:layout_constraintHorizontal_bias="0.10"
-        app:layout_constraintVertical_bias="0.01"/>
+        app:layout_constraintVertical_bias="0.01" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/timesbd"
+        android:text="@string/get_started"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.50"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.95" />
+
+    <TextView
+        android:layout_width="320dp"
+        android:textSize="30dp"
+        android:fontFamily="@font/timesbd"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/tagline"
+        android:textColor="@color/white"
+        app:layout_constraintHorizontal_bias="0.09"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.83"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
