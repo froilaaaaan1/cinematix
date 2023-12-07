@@ -105,4 +105,5 @@
     <string name="success_note">Success!</string>
 
     <string name="non_existent">This user does not exists.</string>
+    <string name="something_went_wrong">Something went wrong.</string>
 </resources>
