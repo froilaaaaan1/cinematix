@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         final EditText usernameLogin = findViewById(R.id.usernameFieldLogin);
         final EditText passwordLogin = findViewById(R.id.passwordFieldLogin);
         final ViewFlipper onboardingFlipper = findViewById(R.id.onboardingFlipper);
-        final Intent intentObject = new Intent(MainActivity.this, MovieLists.class);
+        final Intent intentObject = new Intent(MainActivity.this, BookingActivity.class);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R)
             getWindow().setDecorFitsSystemWindows(false);
