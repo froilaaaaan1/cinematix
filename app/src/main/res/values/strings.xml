@@ -96,4 +96,13 @@
         "when a user tries to pick up one of cards.\n\n"
     </string>
     <string name="action_settings">Settings</string>
+    <string name="login">Login</string>
+    <string name="name">Name</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="ok">OK</string>
+    <string name="success_note">Success!</string>
+
+    <string name="non_existent">This user does not exists.</string>
 </resources>
