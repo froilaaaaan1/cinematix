@@ -11,7 +11,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintHorizontal_bias="0.15"
+        app:layout_constraintHorizontal_bias="0.50"
         app:layout_constraintVertical_bias="0.05"
         android:id="@+id/banner"
         android:layout_height="500dp"
@@ -23,10 +23,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintHorizontal_bias="0.10"
-        app:layout_constraintVertical_bias="0.02"
+        app:layout_constraintHorizontal_bias="0.50"
+        app:layout_constraintVertical_bias="0.05"
         android:textStyle="bold"
-        android:textSize="18sp"
+        android:textSize="20sp"
         android:id="@+id/titleAndYear"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"/>
@@ -303,5 +303,17 @@
             tools:ignore="HardcodedText" />
 
     </RadioGroup>
+
+    <Button
+        android:id="@+id/goToForm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHorizontal_bias="0.50"
+        app:layout_constraintVertical_bias="0.89"
+        android:text="@string/go_to_form"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

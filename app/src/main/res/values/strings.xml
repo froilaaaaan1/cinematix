@@ -113,4 +113,14 @@
     <string name="rowThreePrice">Price: 400.00 PHP</string>
     <string name="rowFourPrice">Price: 350.00 PHP</string>
     <string name="price">Price:</string>
+    <string name="go_to_form">Go To Form</string>
+
+    <string name="secure_you_tix_now">Secure your tix, now!</string>
+    <string name="full_name">Full Name</string>
+    <string name="movie_title">Movie Title</string>
+    <string name="number_of_tickets">No. of Tickets</string>
+    <string name="buy_tickets">Buy Tickets</string>
+    <string name="number_of_seats"> Seat No. </string>
+    <string name="Price_of_Tix"> Price </string>
+    <string name="icon">icon</string>
 </resources>

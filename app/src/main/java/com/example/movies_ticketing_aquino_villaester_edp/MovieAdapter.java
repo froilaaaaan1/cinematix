@@ -48,8 +48,6 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
             intent.putExtra("title", movieItem.getTitleAndYear());
             intent.putExtra("imageID", movieItem.getImageId());
             context.startActivity(intent);
-            Toast.makeText(context, movieItem.getTitleAndYear(), Toast.LENGTH_LONG).show();
-            Toast.makeText(context, movieItem.getImageId(), Toast.LENGTH_LONG).show();
         });
     }
 

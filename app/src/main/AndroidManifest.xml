@@ -13,9 +13,11 @@
         android:theme="@style/Theme.Movies_Ticketing_Aquino_Villaester_EDP"
         tools:targetApi="31">
         <activity
+            android:name=".FormActivity"
+            android:exported="false" />
+        <activity
             android:name=".SeatsActivity"
-            android:exported="false"
-            />
+            android:exported="false" />
         <activity
             android:name=".MovieLists"
             android:exported="false"

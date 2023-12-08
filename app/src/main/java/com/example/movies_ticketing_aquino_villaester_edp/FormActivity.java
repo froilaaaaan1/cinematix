@@ -1,0 +1,42 @@
+package com.example.movies_ticketing_aquino_villaester_edp;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+
+import java.util.Arrays;
+
+public class FormActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_form);
+        Intent intentObjectReceiver = getIntent();
+
+        String seat = intentObjectReceiver.getStringExtra("seat");
+        String price = intentObjectReceiver.getStringExtra("price");
+        String titleYear = intentObjectReceiver.getStringExtra("title");
+        EditText priceEditText = findViewById(R.id.Price);
+        EditText movieNameEditText = findViewById(R.id.movieNameEditText);
+        EditText seatsEditText = findViewById(R.id.numSeats);
+        Button buyButton = findViewById(R.id.buyTicketsButton);
+        EditText numTicketsEditText = findViewById(R.id.numTicketsEditText);
+
+        priceEditText.setText(price);
+        movieNameEditText.setText(String.format("Movie Name: %s", titleYear));
+        seatsEditText.setText(seat);
+
+        buyButton.setOnClickListener(e -> {
+            String movieName = movieNameEditText.getText().toString();
+            String numTickets = numTicketsEditText.getText().toString();
+
+            String message = "Purchased " + numTickets + " tickets for " + movieName;
+            Toast.makeText(FormActivity.this, message, Toast.LENGTH_SHORT).show();
+        });
+    }
+}
