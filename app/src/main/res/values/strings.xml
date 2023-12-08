@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Movies_Ticketing_Aquino_Villaester_EDP</string>
+    <string name="app_name">Cinematix</string>
     <string name="banner_text">BANNER</string>
     <string name="logo">Logo</string>
     <string name="vignette_effect">Vignette_Effect</string>
@@ -106,4 +106,11 @@
 
     <string name="non_existent">This user does not exists.</string>
     <string name="something_went_wrong">Something went wrong.</string>
+    <string name="chosen">chosen</string>
+    <string name="seats">Selected Seat:</string>
+    <string name="rowOnePrice">Price: 550.00 PHP</string>
+    <string name="rowTwoPrice">Price: 450.00 PHP</string>
+    <string name="rowThreePrice">Price: 400.00 PHP</string>
+    <string name="rowFourPrice">Price: 350.00 PHP</string>
+    <string name="price">Price:</string>
 </resources>
