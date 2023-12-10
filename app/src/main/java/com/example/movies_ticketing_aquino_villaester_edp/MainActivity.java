@@ -10,6 +10,8 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -17,6 +19,7 @@ import android.widget.ViewFlipper;
 
 public class MainActivity extends AppCompatActivity {
 
+    private Animation slideInRight, slideOutLeft, slideInLeft, slideOutRight;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +33,10 @@ public class MainActivity extends AppCompatActivity {
         final ViewFlipper onboardingFlipper = findViewById(R.id.onboardingFlipper);
         final Intent intentObject = new Intent(MainActivity.this, MovieLists.class);
 
+        slideInRight = AnimationUtils.loadAnimation(this, android.R.anim.slide_out_right);
+        slideOutLeft = AnimationUtils.loadAnimation(this, android.R.anim.slide_in_left);
+        onboardingFlipper.setOutAnimation(slideInRight);
+
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R)
             getWindow().setDecorFitsSystemWindows(false);
         else {
@@ -38,6 +45,8 @@ public class MainActivity extends AppCompatActivity {
                     WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
             );
         }
+
+
 
         getStarted.setOnClickListener(e -> onboardingFlipper.showNext());
 
