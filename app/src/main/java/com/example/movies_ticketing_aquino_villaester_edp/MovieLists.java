@@ -2,11 +2,12 @@ package com.example.movies_ticketing_aquino_villaester_edp;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.LinearSnapHelper;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.Window;
 import android.view.WindowManager;
 
 import java.util.ArrayList;
@@ -28,7 +29,13 @@ public class MovieLists extends AppCompatActivity {
         }
 
         RecyclerView rView = findViewById(R.id.recycView);
-
+        LinearSnapHelper linearSnapHelper = new LinearSnapHelper();
+        LinearLayoutManager layoutManager = new LinearLayoutManager(
+                this,
+                LinearLayoutManager.HORIZONTAL,
+                false);
+        linearSnapHelper.attachToRecyclerView(rView);
+        rView.setLayoutManager(layoutManager);
         List<MovieItem> movieList = createMovieList();
 
         MovieAdapter adapter = new MovieAdapter(movieList, this);
