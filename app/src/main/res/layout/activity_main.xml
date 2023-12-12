@@ -30,18 +30,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:contentDescription="@string/vignette_effect"
-        android:src="@drawable/logo_icon"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.90"
-        app:layout_constraintHorizontal_bias="0.50"/>
-
     <ViewFlipper
         android:layout_width="match_parent"
         android:id="@+id/onboardingFlipper"
@@ -57,6 +45,8 @@
                 android:fontFamily="@font/sf_ui"
                 android:text="@string/get_started"
                 android:textSize="20sp"
+                android:padding="10dp"
+                android:background="@color/violet"
                 android:id="@+id/getStartedButton"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -127,6 +117,8 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/loginButton"
                 android:text="@string/login"
+                android:background="@color/violet"
+                android:padding="10dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -138,6 +130,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/sign_up"
+                android:background="@color/violet"
+                android:padding="10dp"
                 android:id="@+id/signUpButton"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

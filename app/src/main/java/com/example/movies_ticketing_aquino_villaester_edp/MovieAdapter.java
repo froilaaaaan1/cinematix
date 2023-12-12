@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -42,12 +43,14 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
         holder.textview.setText(movieItem.getTitleAndYear());
         holder.imageview.setImageResource(movieItem.getImageId());
         holder.blurImageView.setImageResource(movieItem.getBlurImageId());
-
-        holder.itemView.setOnClickListener(v -> {
-            Intent intent = new Intent(context, SeatsActivity.class);
-            intent.putExtra("title", movieItem.getTitleAndYear());
-            intent.putExtra("imageID", movieItem.getImageId());
-            context.startActivity(intent);
+        holder.buttonToTicketing.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, SeatsActivity.class);
+                intent.putExtra("title", movieItem.getTitleAndYear());
+                intent.putExtra("imageID", movieItem.getImageId());
+                context.startActivity(intent);
+            }
         });
     }
 
@@ -59,12 +62,14 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
         ImageView imageview;
         ImageView blurImageView;
         TextView textview;
+        Button buttonToTicketing;
 
         public MovieViewHolder(@NonNull View itemview) {
             super(itemview);
             imageview = itemview.findViewById(R.id.movie_banner);
             textview = itemview.findViewById(R.id.movie_title);
             blurImageView = itemview.findViewById(R.id.blur_image);
+            buttonToTicketing = itemview.findViewById(R.id.goToForm);
         }
     }
 }
