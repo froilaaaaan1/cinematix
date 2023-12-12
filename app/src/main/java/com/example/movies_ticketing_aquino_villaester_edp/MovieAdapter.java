@@ -43,14 +43,15 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
         holder.textview.setText(movieItem.getTitleAndYear());
         holder.imageview.setImageResource(movieItem.getImageId());
         holder.blurImageView.setImageResource(movieItem.getBlurImageId());
-        holder.buttonToTicketing.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(context, SeatsActivity.class);
-                intent.putExtra("title", movieItem.getTitleAndYear());
-                intent.putExtra("imageID", movieItem.getImageId());
-                context.startActivity(intent);
-            }
+        holder.buttonToTicketing.setOnClickListener(v -> {
+            Intent intent = new Intent(context, SeatsActivity.class);
+            intent.putExtra("title", movieItem.getTitleAndYear());
+            intent.putExtra("imageID", movieItem.getImageId());
+            intent.putExtra("title", movieItem.getTitle());
+            intent.putExtra("year", movieItem.getYear());
+            intent.putExtra("director", movieItem.getDirector());
+            intent.putExtra("runtime", movieItem.getRuntime());
+            context.startActivity(intent);
         });
     }
 

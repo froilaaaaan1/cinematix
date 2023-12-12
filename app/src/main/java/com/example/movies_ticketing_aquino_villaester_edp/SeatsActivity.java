@@ -34,6 +34,10 @@ public class SeatsActivity extends AppCompatActivity {
         TextView selectedSeatPrice = findViewById(R.id.selectedSeatPrice);
         ImageView chosenMovieImage = findViewById(R.id.banner);
         GridLayout seatGrid = findViewById(R.id.seatGrid);
+        TextView titleView = findViewById(R.id.title);
+        TextView yearTextView = findViewById(R.id.year);
+        TextView directorTextView = findViewById(R.id.director);
+        TextView runTimeTextView = findViewById(R.id.runtime);
 
         for (int i = 0; i < seatCount; i++) {
             CheckBox checkBox = new CheckBox(this);
@@ -53,6 +57,10 @@ public class SeatsActivity extends AppCompatActivity {
 
         Button goToForm = findViewById(R.id.goToForm);
         titleYear.setText(title);
+        titleView.setText(intentReceiver.getStringExtra("title"));
+        yearTextView.setText(intentReceiver.getStringExtra("year"));
+        directorTextView.setText(intentReceiver.getStringExtra("director"));
+        runTimeTextView.setText(intentReceiver.getStringExtra("runtime"));
         chosenMovieImage.setImageResource(imageID);
 
 
