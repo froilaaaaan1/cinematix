@@ -25,7 +25,6 @@ public class SeatsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_seats);
         Intent intentReceiver = getIntent();
-        Intent goToFormIntent = new Intent(SeatsActivity.this, FormActivity.class);
         int imageID = intentReceiver.getIntExtra("imageID", 0);
         int seatCount = 30;
         String title = intentReceiver.getStringExtra("title");
@@ -63,13 +62,14 @@ public class SeatsActivity extends AppCompatActivity {
         runTimeTextView.setText(intentReceiver.getStringExtra("runtime"));
         chosenMovieImage.setImageResource(imageID);
 
-
         goToForm.setOnClickListener(e -> {
-            goToFormIntent.putExtra("seat", selectedSeatTextView.getText().toString());
-            goToFormIntent.putExtra("price", selectedSeatPrice.getText().toString());
-            goToFormIntent.putExtra("title", titleYear.getText().toString());
+            Intent goToGuidelinesIntent = new Intent(SeatsActivity.this, GuidelinesNotesActivity.class);
+
+            goToGuidelinesIntent.putExtra("seat", selectedSeatTextView.getText().toString());
+            goToGuidelinesIntent.putExtra("price", selectedSeatPrice.getText().toString());
+            goToGuidelinesIntent.putExtra("title", titleYear.getText().toString());
             Toast.makeText(SeatsActivity.this, "Selected Seats: " + getSelectedSeat(), Toast.LENGTH_LONG).show();
-            // startActivity(goToFormIntent);
+            startActivity(goToGuidelinesIntent);
         });
     }
 
