@@ -124,4 +124,13 @@
     <string name="Price_of_Tix"> Price </string>
     <string name="icon">icon</string>
     <string name="go_to_seats">Pick Your Seats</string>
+
+    <string name="guideline_one">Book your tickets online: Convenience and Efficiency - Queuing for movie tickets has never been an enjoyable experience, even before recent times. Online ticketing eliminates the inconvenience, especially for those less tech-savvy. Beyond convenience, it reduces paper usage, minimizing waste, and queues, and creating a safer and more efficient transaction process for cinemas and moviegoers.</string>
+    <string name="guideline_two">Avoid peak hours and locations: Enhanced Movie Experience - To fully appreciate the latest films, bigger cinemas often provide a superior viewing experience. This can be challenging in online platforms or smaller theaters. For movie enthusiasts, the trick is to plan visits during off-peak hours, weekdays, or cinema opening/closing times. Opting for less crowded branches ensures a more personalized experience, although services may vary.</string>
+    <string name="guideline_three">Don’t bring snacks: Streamlined Enjoyment - Bringing fewer items when going out simplifies post-movie sanitization concerns. Moviegoers are generally prohibited from eating or drinking in cinemas, making it practical to fill up before or after the movie. Classic movie snacks can be prepared at home or ordered through delivery services for added convenience.</string>
+    <string name="guideline_four">Sanitize your seats: Personal Hygiene and Consideration - Equating cinema seats to public surfaces, regular sanitization is recommended. Considering the extended physical contact, using an unscented disinfectant is courteous to fellow moviegoers. Some may even choose to bring a washable or disposable seat cover for added cleanliness.</string>
+    <string name="guideline_five">Review Cinema Policies: Informed Decision-Making - Familiarize yourself with the specific policies of the cinema you plan to visit. This includes rules on photography, noise, and other guidelines to ensure a harmonious experience for all patrons.</string>
+    <string name="guideline_six">Support Local Cinemas: Community Engagement - Consider supporting local or independent cinemas. These establishments often contribute to the cultural fabric of the community and may offer a distinct and intimate movie-going experience.</string>
+    <string name="gen_guide_notes">General Guidelines and Note</string>
+    <string name="next">Next</string>
 </resources>
