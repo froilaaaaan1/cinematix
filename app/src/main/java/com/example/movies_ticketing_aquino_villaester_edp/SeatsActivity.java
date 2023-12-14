@@ -33,7 +33,6 @@ public class SeatsActivity extends AppCompatActivity {
         TextView selectedSeatPrice = findViewById(R.id.selectedSeatPrice);
         ImageView chosenMovieImage = findViewById(R.id.banner);
         GridLayout seatGrid = findViewById(R.id.seatGrid);
-        TextView titleView = findViewById(R.id.title);
         TextView yearTextView = findViewById(R.id.year);
         TextView directorTextView = findViewById(R.id.director);
         TextView runTimeTextView = findViewById(R.id.runtime);
@@ -56,15 +55,13 @@ public class SeatsActivity extends AppCompatActivity {
 
         Button goToForm = findViewById(R.id.goToForm);
         titleYear.setText(title);
-        titleView.setText(intentReceiver.getStringExtra("title"));
-        yearTextView.setText(intentReceiver.getStringExtra("year"));
-        directorTextView.setText(intentReceiver.getStringExtra("director"));
-        runTimeTextView.setText(intentReceiver.getStringExtra("runtime"));
+        yearTextView.setText(String.format("Year: %s", intentReceiver.getStringExtra("year")));
+        directorTextView.setText(String.format("Director: %s", intentReceiver.getStringExtra("director")));
+        runTimeTextView.setText(String.format("Length: %s", intentReceiver.getStringExtra("runtime")));
         chosenMovieImage.setImageResource(imageID);
 
         goToForm.setOnClickListener(e -> {
             Intent goToGuidelinesIntent = new Intent(SeatsActivity.this, GuidelinesNotesActivity.class);
-
             goToGuidelinesIntent.putExtra("seat", selectedSeatTextView.getText().toString());
             goToGuidelinesIntent.putExtra("price", selectedSeatPrice.getText().toString());
             goToGuidelinesIntent.putExtra("title", titleYear.getText().toString());

@@ -5,11 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
 
 public class FormActivity extends AppCompatActivity {
 
@@ -18,15 +16,19 @@ public class FormActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_form);
         Intent intentObjectReceiver = getIntent();
-
         String seat = intentObjectReceiver.getStringExtra("seat");
         String price = intentObjectReceiver.getStringExtra("price");
         String titleYear = intentObjectReceiver.getStringExtra("title");
         EditText priceEditText = findViewById(R.id.Price);
+        EditText fullName = findViewById(R.id.fullNameEditText);
         EditText movieNameEditText = findViewById(R.id.movieNameEditText);
         EditText seatsEditText = findViewById(R.id.numSeats);
+        EditText ticketNumberEditText = findViewById(R.id.numTicketsEditText);
         Button buyButton = findViewById(R.id.buyTicketsButton);
-        EditText numTicketsEditText = findViewById(R.id.numTicketsEditText);
+        priceEditText.setFocusable(false);
+        movieNameEditText.setFocusable(false);
+        ticketNumberEditText.setFocusable(false);
+        seatsEditText.setFocusable(false);
 
         priceEditText.setText(price);
         movieNameEditText.setText(String.format("Movie Name: %s", titleYear));
@@ -39,17 +41,17 @@ public class FormActivity extends AppCompatActivity {
                         Toast.makeText(FormActivity.this, "Okay, please check the information carefully.", Toast.LENGTH_LONG).show();
                     })
                     .setPositiveButton("LOL, proceed.", (dialog, which) -> {
-                        Intent goToListIntent = new Intent(FormActivity.this, MovieLists.class);
-                        Toast.makeText(FormActivity.this, "Thanks for booking XD.", Toast.LENGTH_LONG).show();
-                        Toast.makeText(FormActivity.this, "We're going back to Movie List after a few seconds.", Toast.LENGTH_LONG).show();
-                        new Handler().postDelayed(() -> startActivity(goToListIntent), 5000);
+                        if (fullName.getText().toString().equals(""))
+                            Toast.makeText(FormActivity.this, "Oops, you missed something.", Toast.LENGTH_SHORT).show();
+                        else {
+                            Intent goToReceiptIntent = new Intent(FormActivity.this, ReceiptActivity.class);
+                            goToReceiptIntent.putExtra("price", price);
+                            goToReceiptIntent.putExtra("title", titleYear);
+                            goToReceiptIntent.putExtra("fullname", fullName.getText().toString());
+                            goToReceiptIntent.putExtra("seat_count", seatsEditText.getText().toString());
+                            startActivity(goToReceiptIntent);
+                        }
                     }).show();
-
-            String movieName = movieNameEditText.getText().toString();
-            String numTickets = numTicketsEditText.getText().toString();
-
-            String message = "Purchased " + numTickets + " tickets for " + movieName;
-            Toast.makeText(FormActivity.this, message, Toast.LENGTH_SHORT).show();
         });
     }
 }

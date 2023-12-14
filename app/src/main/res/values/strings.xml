@@ -134,4 +134,7 @@
     <string name="gen_guide_notes">General Guidelines and Note</string>
     <string name="next">Next</string>
     <string name="congrats_here_s_your_receipt">Congrats, here\'s your receipt!</string>
+    <string name="confetti_congrats">Confetti_congrats</string>
+    <string name="back_to_home">Back to Home</string>
+    <string name="receipt_overlay">Receipt_Overlay</string>
 </resources>
