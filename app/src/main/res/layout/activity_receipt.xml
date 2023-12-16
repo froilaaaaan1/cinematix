@@ -19,18 +19,6 @@
 
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintHorizontal_bias="0.00"
-        app:layout_constraintVertical_bias="0.30"
-        android:src="@drawable/receipt"
-        android:contentDescription="@string/receipt_overlay"/>
-
-    <ImageView
-        android:layout_width="match_parent"
         android:layout_height="270dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -41,16 +29,22 @@
         android:src="@drawable/confetti"
         android:contentDescription="@string/confetti_congrats"/>
 
-    <Button
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:id="@+id/backToHome"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintHorizontal_bias="0.50"
-        app:layout_constraintVertical_bias="0.90"
-        android:text="@string/back_to_home"/>
+        android:layout_marginTop="16dp"
+        app:layout_constraintHorizontal_bias="0.00"
+        app:layout_constraintVertical_bias="0.30"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp">
+
+    </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
