@@ -16,9 +16,10 @@ public class FormActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_form);
         Intent intentObjectReceiver = getIntent();
-        String seat = intentObjectReceiver.getStringExtra("seat");
-        String price = intentObjectReceiver.getStringExtra("price");
+        String seat = String.valueOf(intentObjectReceiver.getIntExtra("seat_count", 0));
+        String price = String.valueOf(intentObjectReceiver.getIntExtra("price", 0));
         String titleYear = intentObjectReceiver.getStringExtra("title");
+        String ticketCount = String.valueOf(intentObjectReceiver.getIntExtra("ticket_count", 0));
         EditText priceEditText = findViewById(R.id.Price);
         EditText fullName = findViewById(R.id.fullNameEditText);
         EditText movieNameEditText = findViewById(R.id.movieNameEditText);
@@ -30,16 +31,15 @@ public class FormActivity extends AppCompatActivity {
         ticketNumberEditText.setFocusable(false);
         seatsEditText.setFocusable(false);
 
-        priceEditText.setText(price);
+        priceEditText.setText(String.format("Price: %s", price));
         movieNameEditText.setText(String.format("Movie Name: %s", titleYear));
-        seatsEditText.setText(seat);
+        seatsEditText.setText(String.format("Seat Count: %s", seat));
+        ticketNumberEditText.setText(String.format("Ticket Count: %s", ticketCount));
 
         buyButton.setOnClickListener(e -> {
             AlertDialog.Builder confirmationDialog = new AlertDialog.Builder(FormActivity.this);
             confirmationDialog.setMessage("Make sure the information are all correct.")
-                    .setNegativeButton("LMAO, i did something bad.", (dialog, which) -> {
-                        Toast.makeText(FormActivity.this, "Okay, please check the information carefully.", Toast.LENGTH_LONG).show();
-                    })
+                    .setNegativeButton("LMAO, i did something bad.", (dialog, which) -> Toast.makeText(FormActivity.this, "Okay, please check the information carefully.", Toast.LENGTH_LONG).show())
                     .setPositiveButton("LOL, proceed.", (dialog, which) -> {
                         if (fullName.getText().toString().equals(""))
                             Toast.makeText(FormActivity.this, "Oops, you missed something.", Toast.LENGTH_SHORT).show();

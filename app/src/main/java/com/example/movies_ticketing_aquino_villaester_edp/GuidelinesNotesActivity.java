@@ -26,21 +26,19 @@ public class GuidelinesNotesActivity extends AppCompatActivity {
         guideLinesFiveCheckbox = findViewById(R.id.guideLineFiveChckBox);
         guideLinesSixCheckbox = findViewById(R.id.guideLineSixChckBox);
 
-        confirmationButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (guideLinesOneCheckbox.isChecked() && guideLinesTwoCheckbox.isChecked() && guideLinesThreeCheckbox.isChecked() && guideLinesFourCheckbox.isChecked() && guideLinesFiveCheckbox.isChecked() && guideLinesSixCheckbox.isChecked()) {
-                    goToConfirmation.putExtra("name", seatInformation.getStringExtra("seat"));
-                    goToConfirmation.putExtra("price", seatInformation.getStringExtra("price"));
-                    goToConfirmation.putExtra("title", seatInformation.getStringExtra("title"));
-                    startActivity(goToConfirmation);
-                } else {
-                    Toast.makeText(
-                            GuidelinesNotesActivity.this,
-                                    "Make sure you've read all guidelines and notes.",
-                                    Toast.LENGTH_LONG)
-                            .show();
-                }
+        confirmationButton.setOnClickListener(v -> {
+            if (guideLinesOneCheckbox.isChecked() && guideLinesTwoCheckbox.isChecked() && guideLinesThreeCheckbox.isChecked() && guideLinesFourCheckbox.isChecked() && guideLinesFiveCheckbox.isChecked() && guideLinesSixCheckbox.isChecked()) {
+                goToConfirmation.putExtra("price", seatInformation.getIntExtra("price", 0));
+                goToConfirmation.putExtra("title", seatInformation.getStringExtra("title"));
+                goToConfirmation.putExtra("seat_count", seatInformation.getIntExtra("seat_count", 0));
+                goToConfirmation.putExtra("ticket_count", seatInformation.getIntExtra("ticket_count", 0));
+                startActivity(goToConfirmation);
+            } else {
+                Toast.makeText(
+                        GuidelinesNotesActivity.this,
+                                "Make sure you've read all guidelines and notes.",
+                                Toast.LENGTH_LONG)
+                        .show();
             }
         });
     }

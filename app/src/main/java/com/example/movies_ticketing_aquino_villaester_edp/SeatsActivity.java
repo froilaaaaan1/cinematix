@@ -34,7 +34,6 @@ public class SeatsActivity extends AppCompatActivity {
         SQLiteDatabase sqldb = dbHelper.getWritableDatabase();
         Intent intentReceiver = getIntent();
         int imageID = intentReceiver.getIntExtra("imageID", 0);
-        Toast.makeText(SeatsActivity.this, intentReceiver.getStringExtra("position"), Toast.LENGTH_LONG).show();
         int seatCount = 30;
         String title = intentReceiver.getStringExtra("title");
         TextView titleYear = findViewById(R.id.titleAndYear);
@@ -59,11 +58,6 @@ public class SeatsActivity extends AppCompatActivity {
                 int seatID = buttonView.getId();
                 if (isChecked) {
                     selectedSeat.add(seatID);
-                    ContentValues values = new ContentValues();
-                    values.put("movie_id", intentReceiver.getIntExtra("position", 0));
-                    values.put("seat_id", seatID);
-                    sqldb.insert("bookings", null, values);
-
                 }
                 else {
                     selectedSeat.remove(seatID);
@@ -82,11 +76,24 @@ public class SeatsActivity extends AppCompatActivity {
 
         goToForm.setOnClickListener(e -> {
             Intent goToGuidelinesIntent = new Intent(SeatsActivity.this, GuidelinesNotesActivity.class);
-            goToGuidelinesIntent.putExtra("seat", selectedSeatTextView.getText().toString());
-            goToGuidelinesIntent.putExtra("price", selectedSeatPrice.getText().toString());
-            goToGuidelinesIntent.putExtra("title", titleYear.getText().toString());
-            Toast.makeText(SeatsActivity.this, "Selected Seats: " + getSelectedSeat(), Toast.LENGTH_LONG).show();
-            startActivity(goToGuidelinesIntent);
+            if (selectedSeat.isEmpty()) {
+                Toast.makeText(SeatsActivity.this, "Please select a seat", Toast.LENGTH_LONG).show();
+                return;
+            } else {
+                int price = 0;
+                for (Integer seat : selectedSeat) {
+                    ContentValues values = new ContentValues();
+                    price += 500;
+                    values.put("movie_id", intentReceiver.getIntExtra("position", 0));
+                    values.put("seat_id", seat + 1);
+                    sqldb.insert("bookings", null, values);
+                }
+                goToGuidelinesIntent.putExtra("seat_count", selectedSeat.size());
+                goToGuidelinesIntent.putExtra("price", price);
+                goToGuidelinesIntent.putExtra("ticket_count", selectedSeat.size());
+                goToGuidelinesIntent.putExtra("title", titleYear.getText().toString());
+                startActivity(goToGuidelinesIntent);
+            }
         });
     }
 
