@@ -1,8 +1,12 @@
 package com.example.movies_ticketing_aquino_villaester_edp;
 
 import android.annotation.SuppressLint;
+import android.content.ContentValues;
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.GridLayout;
@@ -17,6 +21,8 @@ import java.util.Set;
 
 public class SeatsActivity extends AppCompatActivity {
 
+    private Database databaseHelper = new Database(this);
+
     private final Set<Integer> selectedSeat = new HashSet<>();
 
     @SuppressLint("DefaultLocale")
@@ -24,8 +30,11 @@ public class SeatsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_seats);
+        Database dbHelper = new Database(this);
+        SQLiteDatabase sqldb = dbHelper.getWritableDatabase();
         Intent intentReceiver = getIntent();
         int imageID = intentReceiver.getIntExtra("imageID", 0);
+        Toast.makeText(SeatsActivity.this, intentReceiver.getStringExtra("position"), Toast.LENGTH_LONG).show();
         int seatCount = 30;
         String title = intentReceiver.getStringExtra("title");
         TextView titleYear = findViewById(R.id.titleAndYear);
@@ -40,11 +49,22 @@ public class SeatsActivity extends AppCompatActivity {
         for (int i = 0; i < seatCount; i++) {
             CheckBox checkBox = new CheckBox(this);
             checkBox.setText(String.format("Seat: %d", i + 1));
+
             checkBox.setId(i);
+            if (isSeatBooked(intentReceiver.getIntExtra("position", 0), i + 1, sqldb)) {
+                checkBox.setEnabled(false);
+                checkBox.setText("Taken");
+            }
             checkBox.setOnCheckedChangeListener((buttonView, isChecked) -> {
                 int seatID = buttonView.getId();
-                if (isChecked)
+                if (isChecked) {
                     selectedSeat.add(seatID);
+                    ContentValues values = new ContentValues();
+                    values.put("movie_id", intentReceiver.getIntExtra("position", 0));
+                    values.put("seat_id", seatID);
+                    sqldb.insert("bookings", null, values);
+
+                }
                 else {
                     selectedSeat.remove(seatID);
                 }
@@ -70,6 +90,15 @@ public class SeatsActivity extends AppCompatActivity {
         });
     }
 
+    private boolean isSeatBooked(int movieId, int seatNumber, SQLiteDatabase sqldb) {
+        String query = "SELECT * FROM bookings WHERE movie_id = ? & seat_id = ?;";
+        String[] selectionArgs = {String.valueOf(movieId), String.valueOf(seatNumber)};
+        Log.i("test", "seatBookFunction");
+
+        try (Cursor cursor = sqldb.rawQuery(query, selectionArgs)) {
+            return cursor.getCount() > 0;
+        }
+    }
     public Set<Integer> getSelectedSeat() {
         return selectedSeat;
     }

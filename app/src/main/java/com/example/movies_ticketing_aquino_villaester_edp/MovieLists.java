@@ -51,9 +51,9 @@ public class MovieLists extends AppCompatActivity {
                 R.drawable.my_neighbor_totoro_1988,
                 R.drawable.my_neighbor_totoro_1988_blur,
                 "My Neighbor Totoro",
-                 "1988",
+                "1988",
                 "Hayao Miyazaki",
-                "1hr 27Mins"));
+                "1hr 27mins"));
 
         movies.add(new MovieItem(
                 "Nausicaa of the Valley of the Wind - (1984)",
@@ -62,7 +62,7 @@ public class MovieLists extends AppCompatActivity {
                 "Nausicaa of the Valley of the Wind",
                 "1984",
                 "Hayao Miyazaki",
-                "127 Minutes"));
+                "2hrs 2mins"));
 
         movies.add(new MovieItem(
                 "Castle in the Sky - (1986)",
@@ -71,7 +71,7 @@ public class MovieLists extends AppCompatActivity {
                 "Castle in the Sky",
                 "1986",
                 "Hayao Miyazaki",
-                "124 Minutes"));
+                "2hrs 5mins"));
 
         movies.add(new MovieItem(
                 "Grave of the Fireflies - (1988)",
@@ -80,7 +80,7 @@ public class MovieLists extends AppCompatActivity {
                 "Grave of the Fireflies",
                 "1988",
                 "Isao Takahata",
-                "189 Minutes"));
+                "1hr 29mins"));
 
         movies.add(new MovieItem(
                 "Kiki's Delivery Services - (1989)",
@@ -89,7 +89,7 @@ public class MovieLists extends AppCompatActivity {
                 "Kiki's Delivery Services",
                 "1989",
                 "Hayao Miyazaki",
-                "102 Minutes"));
+                "1hr 43mins"));
 
         movies.add(new MovieItem(
                 "Only Yesterday - (1991)",
@@ -98,7 +98,7 @@ public class MovieLists extends AppCompatActivity {
                 "Only Yesterday",
                 "1991",
                 "Isao Takahata",
-                "118 Minutes"));
+                "1hr 58mins"));
 
         movies.add(new MovieItem(
                 "Porco Rossso - (1992)",
@@ -107,7 +107,7 @@ public class MovieLists extends AppCompatActivity {
                 "Porco Rossso",
                 "1992",
                 "Hayao Miyazaki",
-                "94 Minutes"));
+                "1hr 34mins"));
 
         movies.add(new MovieItem(
                 "Ocean Waves - (1993)",
@@ -116,7 +116,7 @@ public class MovieLists extends AppCompatActivity {
                 "Ocean Waves",
                 "1993",
                 "Tomomi Mochizuki",
-                "72 Minutes"));
+                "1hr 12mins"));
 
         movies.add(new MovieItem(
                 "The Boy and The Heron - (2023)",
@@ -125,7 +125,7 @@ public class MovieLists extends AppCompatActivity {
                 "The Boy and The Heron",
                 "2023",
                 "Hayao Miyazaki",
-                "124 Minutes"));
+                "1hr 30mins"));
 
         movies.add(new MovieItem(
                 "Whisper of the Heart - (1995)",
@@ -134,7 +134,7 @@ public class MovieLists extends AppCompatActivity {
                 "Whisper of the Heart",
                 "1995",
                 "Yoshifumi Kondo",
-                "111 Minutes"));
+                "1hr 51mins"));
 
         movies.add(new MovieItem(
                 "Princess Mononoke - (1997)",
@@ -143,7 +143,7 @@ public class MovieLists extends AppCompatActivity {
                 "Princess Mononoke",
                 "1997",
                 "Hayao Miyazaki",
-                "133 Minutes"));
+                "2hrs 14mins"));
 
         movies.add(new MovieItem(
                 "My Neighbors the Yamadas - (1999)",
@@ -152,7 +152,7 @@ public class MovieLists extends AppCompatActivity {
                 "My Neighbors the Yamadas",
                 "1999",
                 "Isao Takahata",
-                "104 Minutes"));
+                "1hr 44mins"));
 
         movies.add(new MovieItem(
                 "Spirited Away - (2001)",
@@ -161,7 +161,7 @@ public class MovieLists extends AppCompatActivity {
                 "Spirited Away",
                 "2001",
                 "Hayao Miyazaki",
-                "125 Minutes"));
+                "2hrs 5mins"));
 
         movies.add(new MovieItem(
                 "The Cat Returns - (2002)",
@@ -170,7 +170,7 @@ public class MovieLists extends AppCompatActivity {
                 "The Cat Returns",
                 "2002",
                 "Hiroyuki Morita",
-                "75 Minutes"));
+                "1hr 15mins"));
 
         movies.add(new MovieItem(
                 "Howl's Moving Castle - (2004)",
@@ -179,7 +179,7 @@ public class MovieLists extends AppCompatActivity {
                 "Howl's Moving Castle",
                 "2004",
                 "Hayao Miyazaki",
-                "119 Minutes"));
+                "1hr 59mins"));
 
         movies.add(new MovieItem(
                 "When Marnie was There - (2014)",
@@ -188,7 +188,7 @@ public class MovieLists extends AppCompatActivity {
                 "When Marnie was There",
                 "2014",
                 "Hiromasa Yonebayashi",
-                "103 Minutes"));
+                "1hr 43mins"));
 
         movies.add(new MovieItem(
                 "Ponyo - (2008)",
@@ -197,7 +197,7 @@ public class MovieLists extends AppCompatActivity {
                 "Ponyo",
                 "2008",
                 "Hayao Miyazaki",
-                "101 Minutes"));
+                "1hr 41mins"));
 
         movies.add(new MovieItem(
                 "The Secret World of Arrietty - (2010)",
@@ -206,7 +206,7 @@ public class MovieLists extends AppCompatActivity {
                 "The Secret World of Arrietty",
                 "2010",
                 "Hiromasa Yonebayashi",
-                "95 Minutes"));
+                "1hr 34mins"));
 
         movies.add(new MovieItem(
                 "From Up on Poppy Hill - (2011)",
@@ -215,7 +215,7 @@ public class MovieLists extends AppCompatActivity {
                 "From Up on Poppy Hill",
                 "2011",
                 "Goro Miyazaki",
-                "92 Minutes"));
+                "1hr 31mins"));
 
         movies.add(new MovieItem(
                 "The Wind Rises - (2013)",
@@ -224,7 +224,7 @@ public class MovieLists extends AppCompatActivity {
                 "The Wind Rises",
                 "2013",
                 "Hayao Miyazaki",
-                "126 Minutes"));
+                "2hrs 6mins"));
 
         return movies;
     }

@@ -45,6 +45,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
         holder.blurImageView.setImageResource(movieItem.getBlurImageId());
         holder.buttonToTicketing.setOnClickListener(v -> {
             Intent intent = new Intent(context, SeatsActivity.class);
+            intent.putExtra("position", String.valueOf(pos));
             intent.putExtra("title", movieItem.getTitleAndYear());
             intent.putExtra("imageID", movieItem.getImageId());
             intent.putExtra("title", movieItem.getTitle());
