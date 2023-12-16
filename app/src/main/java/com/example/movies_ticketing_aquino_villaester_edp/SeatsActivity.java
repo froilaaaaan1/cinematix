@@ -48,7 +48,7 @@ public class SeatsActivity extends AppCompatActivity {
 
         for (int i = 0; i < seatCount; i++) {
             CheckBox checkBox = new CheckBox(this);
-            checkBox.setText(String.format("Seat: %d", i + 1));
+            checkBox.setText(String.format("Seat: %d", i));
 
             checkBox.setId(i);
             if (isSeatBooked(intentReceiver.getIntExtra("position", 0), i + 1, sqldb)) {
@@ -91,7 +91,7 @@ public class SeatsActivity extends AppCompatActivity {
     }
 
     private boolean isSeatBooked(int movieId, int seatNumber, SQLiteDatabase sqldb) {
-        String query = "SELECT * FROM bookings WHERE movie_id = ? & seat_id = ?;";
+        String query = "SELECT * FROM bookings WHERE movie_id = ? AND seat_id = ?;";
         String[] selectionArgs = {String.valueOf(movieId), String.valueOf(seatNumber)};
         Log.i("test", "seatBookFunction");
 

@@ -19,7 +19,7 @@ import android.widget.ViewFlipper;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Animation slideInRight, slideOutLeft, slideInLeft, slideOutRight;
+    private Animation slideInRight, slideInLeft;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,8 +34,9 @@ public class MainActivity extends AppCompatActivity {
         final Intent intentObject = new Intent(MainActivity.this, MovieLists.class);
 
         slideInRight = AnimationUtils.loadAnimation(this, android.R.anim.slide_out_right);
-        slideOutLeft = AnimationUtils.loadAnimation(this, android.R.anim.slide_in_left);
+        slideInLeft = AnimationUtils.loadAnimation(this, android.R.anim.slide_in_left);
         onboardingFlipper.setOutAnimation(slideInRight);
+        onboardingFlipper.setInAnimation(slideInLeft);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R)
             getWindow().setDecorFitsSystemWindows(false);
@@ -45,8 +46,6 @@ public class MainActivity extends AppCompatActivity {
                     WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
             );
         }
-
-
 
         getStarted.setOnClickListener(e -> onboardingFlipper.showNext());
 
