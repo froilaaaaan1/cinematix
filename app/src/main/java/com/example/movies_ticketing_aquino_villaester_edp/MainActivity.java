@@ -20,7 +20,6 @@ import android.widget.ViewFlipper;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Animation slideInRight, slideInLeft;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,8 +42,8 @@ public class MainActivity extends AppCompatActivity {
         final ViewFlipper onboardingFlipper = findViewById(R.id.onboardingFlipper);
         final Intent intentObject = new Intent(MainActivity.this, MovieLists.class);
 
-        slideInRight = AnimationUtils.loadAnimation(this, android.R.anim.slide_out_right);
-        slideInLeft = AnimationUtils.loadAnimation(this, android.R.anim.slide_in_left);
+        Animation slideInRight = AnimationUtils.loadAnimation(this, android.R.anim.slide_out_right);
+        Animation slideInLeft = AnimationUtils.loadAnimation(this, android.R.anim.slide_in_left);
         onboardingFlipper.setOutAnimation(slideInRight);
         onboardingFlipper.setInAnimation(slideInLeft);
 

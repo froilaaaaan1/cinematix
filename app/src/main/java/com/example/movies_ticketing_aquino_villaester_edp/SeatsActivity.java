@@ -24,7 +24,7 @@ import java.util.Set;
 
 public class SeatsActivity extends AppCompatActivity {
 
-    private Database databaseHelper = new Database(this);
+    private final Database databaseHelper = new Database(this);
 
     private final Set<Integer> selectedSeat = new HashSet<>();
 
