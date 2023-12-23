@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class FormActivity extends AppCompatActivity {
@@ -32,11 +33,14 @@ public class FormActivity extends AppCompatActivity {
         String price = String.valueOf(intentObjectReceiver.getIntExtra("price", 0));
         String titleYear = intentObjectReceiver.getStringExtra("title");
         String ticketCount = String.valueOf(intentObjectReceiver.getIntExtra("ticket_count", 0));
-        EditText priceEditText = findViewById(R.id.Price);
+        TextView priceEditText = findViewById(R.id.Price);
         EditText fullName = findViewById(R.id.fullNameEditText);
-        EditText movieNameEditText = findViewById(R.id.movieNameEditText);
-        EditText seatsEditText = findViewById(R.id.numSeats);
-        EditText ticketNumberEditText = findViewById(R.id.numTicketsEditText);
+        TextView movieNameEditText = findViewById(R.id.movieNameEditText);
+        TextView seatsEditText = findViewById(R.id.numSeats);
+        TextView ticketNumberEditText = findViewById(R.id.numTicketsEditText);
+        TextView directorTextView = findViewById(R.id.directorTextView);
+        TextView runtimeTextView = findViewById(R.id.runtimeTextView);
+        TextView yearTextView = findViewById(R.id.movieYearTextView);
         Button buyButton = findViewById(R.id.buyTicketsButton);
         priceEditText.setFocusable(false);
         movieNameEditText.setFocusable(false);
@@ -47,11 +51,14 @@ public class FormActivity extends AppCompatActivity {
         movieNameEditText.setText(String.format("Movie Name: %s", titleYear));
         seatsEditText.setText(String.format("Seat Count: %s", seat));
         ticketNumberEditText.setText(String.format("Ticket Count: %s", ticketCount));
+        directorTextView.setText(String.format("Director: %s", intentObjectReceiver.getStringExtra("director")));
+        runtimeTextView.setText(String.format("Runtime: %s", intentObjectReceiver.getStringExtra("runtime")));
+        yearTextView.setText(String.format("Year: %s", intentObjectReceiver.getStringExtra("year")));
 
         buyButton.setOnClickListener(e -> {
             AlertDialog.Builder confirmationDialog = new AlertDialog.Builder(FormActivity.this);
             confirmationDialog.setMessage("Make sure the information are all correct.")
-                    .setNegativeButton("Check it again", (dialog, which) -> Toast.makeText(FormActivity.this, "Okay, please check the information carefully.", Toast.LENGTH_LONG).show())
+                    .setNegativeButton("Check it again.", (dialog, which) -> Toast.makeText(FormActivity.this, "Okay, please check the information carefully.", Toast.LENGTH_LONG).show())
                     .setPositiveButton("Please proceed.", (dialog, which) -> {
                         if (fullName.getText().toString().equals(""))
                             Toast.makeText(FormActivity.this, "Oops, you missed something.", Toast.LENGTH_SHORT).show();

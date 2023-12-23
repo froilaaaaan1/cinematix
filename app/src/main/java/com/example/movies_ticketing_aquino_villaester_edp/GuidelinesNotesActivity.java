@@ -42,6 +42,9 @@ public class GuidelinesNotesActivity extends AppCompatActivity {
                 goToConfirmation.putExtra("title", seatInformation.getStringExtra("title"));
                 goToConfirmation.putExtra("seat_count", seatInformation.getIntExtra("seat_count", 0));
                 goToConfirmation.putExtra("ticket_count", seatInformation.getIntExtra("ticket_count", 0));
+                goToConfirmation.putExtra("director", seatInformation.getStringExtra("director"));
+                goToConfirmation.putExtra("runtime", seatInformation.getStringExtra("runtime"));
+                goToConfirmation.putExtra("year", seatInformation.getStringExtra("year"));
                 startActivity(goToConfirmation);
             } else {
                 Toast.makeText(

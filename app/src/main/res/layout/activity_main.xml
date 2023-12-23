@@ -62,7 +62,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 android:text="@string/tagline"
                 android:textColor="@color/white"
-                android:paddingLeft="10dp"
+                android:paddingStart="10dp"
                 app:layout_constraintHorizontal_bias="0.09"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"

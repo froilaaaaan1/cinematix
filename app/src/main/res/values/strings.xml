@@ -117,11 +117,14 @@
 
     <string name="secure_you_tix_now">Secure your tix, now!</string>
     <string name="full_name">Full Name</string>
-    <string name="movie_title">Movie Title</string>
-    <string name="number_of_tickets">No. of Tickets</string>
+    <string name="movie_title">Movie Title: </string>
+    <string name="number_of_tickets">No. of Tickets: </string>
     <string name="buy_tickets">Buy Tickets</string>
-    <string name="number_of_seats"> Seat No. </string>
-    <string name="Price_of_Tix"> Price </string>
+    <string name="number_of_seats"> Seat No.: </string>
+    <string name="director">Director: </string>
+    <string name="runtime">Runtime: </string>
+    <string name="year">Year: </string>
+    <string name="Price_of_Tix"> Price: </string>
     <string name="icon">icon</string>
     <string name="go_to_seats">Pick Your Seats</string>
 

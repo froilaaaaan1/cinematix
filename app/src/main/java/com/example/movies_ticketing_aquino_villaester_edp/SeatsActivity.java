@@ -8,7 +8,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -93,13 +92,16 @@ public class SeatsActivity extends AppCompatActivity {
                     values.put("seat_id", seat + 1);
                     sqldb.insert("bookings", null, values);
                 }
+                String year = intentReceiver.getStringExtra("year");
+                String runtime = intentReceiver.getStringExtra("runtime");
+                String director = intentReceiver.getStringExtra("director");
                 goToGuidelinesIntent.putExtra("seat_count", selectedSeat.size());
                 goToGuidelinesIntent.putExtra("price", price);
                 goToGuidelinesIntent.putExtra("ticket_count", selectedSeat.size());
                 goToGuidelinesIntent.putExtra("title", titleYear.getText().toString());
                 goToGuidelinesIntent.putExtra("director", intentReceiver.getStringExtra("director"));
                 goToGuidelinesIntent.putExtra("runtime", intentReceiver.getStringExtra("runtime"));
-                goToGuidelinesIntent.putExtra("year", intentReceiver.getStringExtra("year"));
+                goToGuidelinesIntent.putExtra("year", year);
                 startActivity(goToGuidelinesIntent);
             }
         });
@@ -108,7 +110,6 @@ public class SeatsActivity extends AppCompatActivity {
     private boolean isSeatBooked(int movieId, int seatNumber, SQLiteDatabase sqldb) {
         String query = "SELECT * FROM bookings WHERE movie_id = ? AND seat_id = ?;";
         String[] selectionArgs = {String.valueOf(movieId), String.valueOf(seatNumber)};
-        Log.i("test", "seatBookFunction");
 
         try (Cursor cursor = sqldb.rawQuery(query, selectionArgs)) {
             return cursor.getCount() > 0;
