@@ -55,7 +55,7 @@
         android:textStyle="bold"
         android:fontFamily="@font/sf_ui"
         android:padding="10dp"
-        android:background="@color/violet"
+        android:background="@drawable/rounded_corner"
         android:text="@string/go_to_seats"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"

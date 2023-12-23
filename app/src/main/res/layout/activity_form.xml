@@ -65,7 +65,8 @@
         android:backgroundTint="#FFFFFF"
         android:textColorHint="#FFFFFF"
         android:textColor="#FFFFFF"
-        android:padding="12dp"/>
+        android:padding="12dp"
+        android:autofillHints="number" />
 
     <EditText
         android:id="@+id/numSeats"
@@ -86,7 +87,7 @@
         android:layout_marginTop="120dp"
         android:text="@string/buy_tickets"
         android:textColor="#FFFFFF"
-        android:background="#165a72"
+        android:background="@drawable/rounded_corner"
         android:padding="12dp"/>
 
     <TextView
