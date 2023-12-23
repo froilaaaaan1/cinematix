@@ -137,4 +137,5 @@
     <string name="confetti_congrats">Confetti_congrats</string>
     <string name="back_to_home">Back to Home</string>
     <string name="receipt_overlay">Receipt_Overlay</string>
+    <string name="vignette_overlay">vignette_overlay</string>
 </resources>

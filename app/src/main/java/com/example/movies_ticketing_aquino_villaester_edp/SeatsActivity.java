@@ -5,8 +5,11 @@ import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.GridLayout;
@@ -30,6 +33,15 @@ public class SeatsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_seats);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R)
+            getWindow().setDecorFitsSystemWindows(false);
+        else {
+            getWindow().setFlags(
+                    WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
+                    WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
+            );
+        }
+        getWindow().setNavigationBarColor(Color.TRANSPARENT);
         Database dbHelper = new Database(this);
         SQLiteDatabase sqldb = dbHelper.getWritableDatabase();
         Intent intentReceiver = getIntent();
@@ -37,13 +49,9 @@ public class SeatsActivity extends AppCompatActivity {
         int seatCount = 30;
         String title = intentReceiver.getStringExtra("title");
         TextView titleYear = findViewById(R.id.titleAndYear);
-        TextView selectedSeatTextView = findViewById(R.id.selectedSeatTextView);
-        TextView selectedSeatPrice = findViewById(R.id.selectedSeatPrice);
         ImageView chosenMovieImage = findViewById(R.id.banner);
+        ImageView chosenMovieImageBlur = findViewById(R.id.bannerForVignette);
         GridLayout seatGrid = findViewById(R.id.seatGrid);
-        TextView yearTextView = findViewById(R.id.year);
-        TextView directorTextView = findViewById(R.id.director);
-        TextView runTimeTextView = findViewById(R.id.runtime);
 
         for (int i = 0; i < seatCount; i++) {
             CheckBox checkBox = new CheckBox(this);
@@ -69,17 +77,14 @@ public class SeatsActivity extends AppCompatActivity {
 
         Button goToForm = findViewById(R.id.goToForm);
         titleYear.setText(title);
-        yearTextView.setText(String.format("Year: %s", intentReceiver.getStringExtra("year")));
-        directorTextView.setText(String.format("Director: %s", intentReceiver.getStringExtra("director")));
-        runTimeTextView.setText(String.format("Length: %s", intentReceiver.getStringExtra("runtime")));
         chosenMovieImage.setImageResource(imageID);
+        chosenMovieImageBlur.setImageResource(imageID);
 
         goToForm.setOnClickListener(e -> {
             Intent goToGuidelinesIntent = new Intent(SeatsActivity.this, GuidelinesNotesActivity.class);
-            if (selectedSeat.isEmpty()) {
+            if (selectedSeat.isEmpty())
                 Toast.makeText(SeatsActivity.this, "Please select a seat", Toast.LENGTH_LONG).show();
-                return;
-            } else {
+            else {
                 int price = 0;
                 for (Integer seat : selectedSeat) {
                     ContentValues values = new ContentValues();
@@ -92,6 +97,9 @@ public class SeatsActivity extends AppCompatActivity {
                 goToGuidelinesIntent.putExtra("price", price);
                 goToGuidelinesIntent.putExtra("ticket_count", selectedSeat.size());
                 goToGuidelinesIntent.putExtra("title", titleYear.getText().toString());
+                goToGuidelinesIntent.putExtra("director", intentReceiver.getStringExtra("director"));
+                goToGuidelinesIntent.putExtra("runtime", intentReceiver.getStringExtra("runtime"));
+                goToGuidelinesIntent.putExtra("year", intentReceiver.getStringExtra("year"));
                 startActivity(goToGuidelinesIntent);
             }
         });

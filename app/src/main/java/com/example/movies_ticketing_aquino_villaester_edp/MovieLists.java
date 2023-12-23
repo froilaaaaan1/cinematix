@@ -1,5 +1,6 @@
 package com.example.movies_ticketing_aquino_villaester_edp;
 
+import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.WindowManager;
@@ -26,7 +27,7 @@ public class MovieLists extends AppCompatActivity {
                     WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
             );
         }
-
+        getWindow().setNavigationBarColor(Color.TRANSPARENT);
         RecyclerView rView = findViewById(R.id.recycView);
         LinearSnapHelper linearSnapHelper = new LinearSnapHelper();
         LinearLayoutManager layoutManager = new LinearLayoutManager(

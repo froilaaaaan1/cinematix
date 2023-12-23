@@ -3,8 +3,11 @@ package com.example.movies_ticketing_aquino_villaester_edp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.Toast;
@@ -14,7 +17,15 @@ public class GuidelinesNotesActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_guidelines_notes);
-
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R)
+            getWindow().setDecorFitsSystemWindows(false);
+        else {
+            getWindow().setFlags(
+                    WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
+                    WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
+            );
+        }
+        getWindow().setNavigationBarColor(Color.TRANSPARENT);
         CheckBox guideLinesOneCheckbox, guideLinesTwoCheckbox, guideLinesThreeCheckbox, guideLinesFourCheckbox, guideLinesFiveCheckbox, guideLinesSixCheckbox;
         Button confirmationButton = findViewById(R.id.proceedToConfirmation);
         Intent goToConfirmation = new Intent(GuidelinesNotesActivity.this, FormActivity.class);

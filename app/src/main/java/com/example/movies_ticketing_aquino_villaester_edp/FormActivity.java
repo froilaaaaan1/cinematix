@@ -4,7 +4,10 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -15,6 +18,15 @@ public class FormActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_form);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R)
+            getWindow().setDecorFitsSystemWindows(false);
+        else {
+            getWindow().setFlags(
+                    WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
+                    WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
+            );
+        }
+        getWindow().setNavigationBarColor(Color.TRANSPARENT);
         Intent intentObjectReceiver = getIntent();
         String seat = String.valueOf(intentObjectReceiver.getIntExtra("seat_count", 0));
         String price = String.valueOf(intentObjectReceiver.getIntExtra("price", 0));
@@ -39,8 +51,8 @@ public class FormActivity extends AppCompatActivity {
         buyButton.setOnClickListener(e -> {
             AlertDialog.Builder confirmationDialog = new AlertDialog.Builder(FormActivity.this);
             confirmationDialog.setMessage("Make sure the information are all correct.")
-                    .setNegativeButton("LMAO, i did something bad.", (dialog, which) -> Toast.makeText(FormActivity.this, "Okay, please check the information carefully.", Toast.LENGTH_LONG).show())
-                    .setPositiveButton("LOL, proceed.", (dialog, which) -> {
+                    .setNegativeButton("Check it again", (dialog, which) -> Toast.makeText(FormActivity.this, "Okay, please check the information carefully.", Toast.LENGTH_LONG).show())
+                    .setPositiveButton("Please proceed.", (dialog, which) -> {
                         if (fullName.getText().toString().equals(""))
                             Toast.makeText(FormActivity.this, "Oops, you missed something.", Toast.LENGTH_SHORT).show();
                         else {
