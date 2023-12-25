@@ -1,6 +1,5 @@
 package com.example.movies_ticketing_aquino_villaester_edp;
 
-import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.content.Intent;

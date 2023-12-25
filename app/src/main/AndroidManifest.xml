@@ -31,9 +31,6 @@
             android:label="@string/title_activity_movie_lists"
             android:theme="@style/Theme.Movies_Ticketing_Aquino_Villaester_EDP" />
         <activity
-            android:name=".BookingActivity"
-            android:exported="false" />
-        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
