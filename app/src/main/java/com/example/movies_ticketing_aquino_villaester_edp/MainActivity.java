@@ -91,6 +91,7 @@ public class MainActivity extends AppCompatActivity {
                         messageToast.show();
                     }
                     db.close();
+                    dialogObject.dismiss();
                 }
             });
         });
