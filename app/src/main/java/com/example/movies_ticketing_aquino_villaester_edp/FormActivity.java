@@ -30,6 +30,7 @@ public class FormActivity extends AppCompatActivity {
         getWindow().setNavigationBarColor(Color.TRANSPARENT);
         Intent intentObjectReceiver = getIntent();
         String seat = String.valueOf(intentObjectReceiver.getIntExtra("seat_count", 0));
+        Toast.makeText(this, "Seat Count: " + seat, Toast.LENGTH_SHORT).show();
         String price = String.valueOf(intentObjectReceiver.getIntExtra("price", 0));
         String titleYear = intentObjectReceiver.getStringExtra("title");
         String ticketCount = String.valueOf(intentObjectReceiver.getIntExtra("ticket_count", 0));
@@ -63,9 +64,7 @@ public class FormActivity extends AppCompatActivity {
                         if (fullName.getText().toString().equals(""))
                             Toast.makeText(FormActivity.this, "Oops, you missed something", Toast.LENGTH_SHORT).show();
                         else {
-                            Intent goToReceiptIntent = new Intent(FormActivity.this, ReceiptActivity.class);
-//                            Toast.makeText(FormActivity.this, intentObjectReceiver.getIntExtra("seat_count", 0), Toast.LENGTH_SHORT).show();
-//                            goToReceiptIntent.putExtra("seat_count", intentObjectReceiver.getIntExtra("seat_count", 0));
+                            Intent goToReceiptIntent = new Intent(FormActivity.this, ReceiptActivity.class);goToReceiptIntent.putExtra("seat_count", intentObjectReceiver.getIntExtra("seat_count", 0));
                             startActivity(goToReceiptIntent);
                         }
                     }).show();

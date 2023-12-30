@@ -25,6 +25,7 @@ public class GuidelinesNotesActivity extends AppCompatActivity {
             );
         }
         getWindow().setNavigationBarColor(Color.TRANSPARENT);
+
         CheckBox guideLinesOneCheckbox, guideLinesTwoCheckbox, guideLinesThreeCheckbox, guideLinesFourCheckbox, guideLinesFiveCheckbox, guideLinesSixCheckbox;
         Button confirmationButton = findViewById(R.id.proceedToConfirmation);
         Intent goToConfirmation = new Intent(GuidelinesNotesActivity.this, FormActivity.class);

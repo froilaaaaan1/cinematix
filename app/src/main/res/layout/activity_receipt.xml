@@ -6,6 +6,19 @@
     android:layout_height="match_parent"
     tools:context=".ReceiptActivity">
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/blue_illustration_cinema_movies_ticket_blur"
+        android:contentDescription="@string/ticket_illustration_blur"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -16,6 +29,17 @@
         app:layout_constraintHorizontal_bias="0.50"
         app:layout_constraintVertical_bias="0.05"
         android:text="@string/congrats_here_s_your_receipt"/>
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/blue_illustration_cinema_movies_ticket"
+        android:contentDescription="@string/ticket_illustration"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <ImageView
         android:layout_width="match_parent"
@@ -28,23 +52,6 @@
         app:layout_constraintVertical_bias="0.00"
         android:src="@drawable/confetti"
         android:contentDescription="@string/confetti_congrats"/>
-
-    <LinearLayout
-        android:id="@+id/container"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="16dp"
-        app:layout_constraintHorizontal_bias="0.00"
-        app:layout_constraintVertical_bias="0.30"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp">
-
-    </LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

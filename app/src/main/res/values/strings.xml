@@ -155,4 +155,6 @@
     <string name="vignette_overlay">vignette_overlay</string>
     <string name="background_for_guidelines">background_for_guidelines</string>
     <string name="username_taken">Username Taken.</string>
+    <string name="ticket_illustration">ticket image illustration</string>
+    <string name="ticket_illustration_blur">blur_ticket\n</string>
 </resources>

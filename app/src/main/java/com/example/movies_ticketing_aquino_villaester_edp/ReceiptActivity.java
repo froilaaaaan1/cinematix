@@ -2,15 +2,12 @@ package com.example.movies_ticketing_aquino_villaester_edp;
 
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
-import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.WindowManager;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -34,9 +31,6 @@ public class ReceiptActivity extends AppCompatActivity {
             );
         }
         getWindow().setNavigationBarColor(Color.TRANSPARENT);
-        Intent receiver = getIntent();
-        int seats_count = receiver.getIntExtra("seat_count", 0);
-        LinearLayout container = findViewById(R.id.container);
         String CHANNEL_ID = "";
         String titleSuccess = "Success!";
         String contentSuccess = "You have successfully purchased your tickets.";
@@ -78,12 +72,5 @@ public class ReceiptActivity extends AppCompatActivity {
             int notificationId = 1;
             notificationManager.notify(notificationId, builder.build());
         }, 5000);
-
-
-        for (int i = 0; i < seats_count; i++) {
-            ImageView imageView = new ImageView(this);
-            imageView.setImageResource(R.drawable.blue_illustration_cinema_movies_ticket);
-            container.addView(imageView);
-        }
     }
 }
