@@ -57,11 +57,11 @@ public class FormActivity extends AppCompatActivity {
 
         buyButton.setOnClickListener(e -> {
             AlertDialog.Builder confirmationDialog = new AlertDialog.Builder(FormActivity.this);
-            confirmationDialog.setMessage("Make sure the information are all correct.")
-                    .setNegativeButton("Check it again.", (dialog, which) -> Toast.makeText(FormActivity.this, "Okay, please check the information carefully.", Toast.LENGTH_LONG).show())
-                    .setPositiveButton("Please proceed.", (dialog, which) -> {
+            confirmationDialog.setMessage("Make sure the information are all correct")
+                    .setNegativeButton("Check it again", (dialog, which) -> Toast.makeText(FormActivity.this, "Okay, please check the information carefully", Toast.LENGTH_LONG).show())
+                    .setPositiveButton("Please proceed", (dialog, which) -> {
                         if (fullName.getText().toString().equals(""))
-                            Toast.makeText(FormActivity.this, "Oops, you missed something.", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(FormActivity.this, "Oops, you missed something", Toast.LENGTH_SHORT).show();
                         else {
                             Intent goToReceiptIntent = new Intent(FormActivity.this, ReceiptActivity.class);
 //                            Toast.makeText(FormActivity.this, intentObjectReceiver.getIntExtra("seat_count", 0), Toast.LENGTH_SHORT).show();

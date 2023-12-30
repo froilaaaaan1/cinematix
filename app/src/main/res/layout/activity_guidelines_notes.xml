@@ -37,19 +37,20 @@
         tools:ignore="RtlSymmetry" />
 
     <CheckBox
-        android:layout_width="match_parent"
-        android:fontFamily="@font/sf_ui"
         android:id="@+id/guideLineOneChckBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/sf_ui"
+        android:minHeight="48dp"
         android:paddingStart="10dp"
         android:paddingEnd="10dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintVertical_bias="0.13"
-        app:layout_constraintHorizontal_bias="0.00"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:text="@string/guideline_one"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.00"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.13"
         tools:ignore="RtlSymmetry" />
 
     <CheckBox
@@ -57,7 +58,7 @@
         android:id="@+id/guideLineTwoChckBox"
         android:layout_height="wrap_content"
         android:fontFamily="@font/sf_ui"
-        app:layout_constraintVertical_bias="0.29"
+        app:layout_constraintVertical_bias="0.20"
         app:layout_constraintHorizontal_bias="0.00"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -74,7 +75,7 @@
         tools:ignore="RtlSymmetry"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintVertical_bias="0.47"
+        app:layout_constraintVertical_bias="0.30"
         android:id="@+id/guideLineThreeChckBox"
         app:layout_constraintHorizontal_bias="0.00"
         android:fontFamily="@font/sf_ui"
@@ -92,7 +93,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/guideLineFourChckBox"
-        app:layout_constraintVertical_bias="0.62"
+        app:layout_constraintVertical_bias="0.40"
         app:layout_constraintHorizontal_bias="0.00"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -108,7 +109,7 @@
         android:paddingEnd="10dp"
         tools:ignore="RtlSymmetry"
         android:layout_height="wrap_content"
-        app:layout_constraintVertical_bias="0.74"
+        app:layout_constraintVertical_bias="0.51"
         app:layout_constraintHorizontal_bias="0.00"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -123,7 +124,7 @@
         android:paddingStart="10dp"
         android:paddingEnd="10dp"
         tools:ignore="RtlSymmetry"
-        app:layout_constraintVertical_bias="0.85"
+        app:layout_constraintVertical_bias="0.62"
         app:layout_constraintHorizontal_bias="0.00"
         android:id="@+id/guideLineSixChckBox"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -144,7 +145,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintVertical_bias="0.95"
+        app:layout_constraintVertical_bias="0.73"
         app:layout_constraintHorizontal_bias="0.50"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
