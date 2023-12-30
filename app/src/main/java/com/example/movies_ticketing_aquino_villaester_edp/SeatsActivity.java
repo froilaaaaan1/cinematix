@@ -93,8 +93,6 @@ public class SeatsActivity extends AppCompatActivity {
                     sqldb.insert("bookings", null, values);
                 }
                 String year = intentReceiver.getStringExtra("year");
-                String runtime = intentReceiver.getStringExtra("runtime");
-                String director = intentReceiver.getStringExtra("director");
                 goToGuidelinesIntent.putExtra("seat_count", selectedSeat.size());
                 goToGuidelinesIntent.putExtra("price", price);
                 goToGuidelinesIntent.putExtra("ticket_count", selectedSeat.size());

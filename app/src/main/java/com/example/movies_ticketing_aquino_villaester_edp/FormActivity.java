@@ -64,7 +64,8 @@ public class FormActivity extends AppCompatActivity {
                             Toast.makeText(FormActivity.this, "Oops, you missed something.", Toast.LENGTH_SHORT).show();
                         else {
                             Intent goToReceiptIntent = new Intent(FormActivity.this, ReceiptActivity.class);
-                            goToReceiptIntent.putExtra("seat_count", Integer.valueOf(seat));
+//                            Toast.makeText(FormActivity.this, intentObjectReceiver.getIntExtra("seat_count", 0), Toast.LENGTH_SHORT).show();
+//                            goToReceiptIntent.putExtra("seat_count", intentObjectReceiver.getIntExtra("seat_count", 0));
                             startActivity(goToReceiptIntent);
                         }
                     }).show();
