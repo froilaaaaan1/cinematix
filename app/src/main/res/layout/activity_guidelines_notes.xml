@@ -4,9 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingLeft="10dp"
-    android:paddingRight="10dp"
     tools:context=".GuidelinesNotesActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/guidelines"
+        android:scaleType="centerCrop"
+        android:contentDescription="@string/background_for_guidelines" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/vignette_2"
+        tools:ignore="ContentDescription" />
 
     <TextView
         android:layout_width="match_parent"
@@ -15,16 +26,22 @@
         android:text="@string/gen_guide_notes"
         app:layout_constraintVertical_bias="0.05"
         app:layout_constraintHorizontal_bias="0.50"
+        android:paddingStart="10dp"
+        android:textAlignment="center"
+        android:paddingEnd="10dp"
         android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="RtlSymmetry" />
 
     <CheckBox
         android:layout_width="match_parent"
         android:fontFamily="@font/sf_ui"
         android:id="@+id/guideLineOneChckBox"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
         android:layout_height="wrap_content"
         app:layout_constraintVertical_bias="0.13"
         app:layout_constraintHorizontal_bias="0.00"
@@ -32,7 +49,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:text="@string/guideline_one"/>
+        android:text="@string/guideline_one"
+        tools:ignore="RtlSymmetry" />
 
     <CheckBox
         android:layout_width="match_parent"
@@ -45,9 +63,15 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:text="@string/guideline_two"/>
+        android:text="@string/guideline_two"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        tools:ignore="RtlSymmetry" />
 
     <CheckBox
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        tools:ignore="RtlSymmetry"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintVertical_bias="0.47"
@@ -61,6 +85,9 @@
         android:text="@string/guideline_three"/>
 
     <CheckBox
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        tools:ignore="RtlSymmetry"
         android:fontFamily="@font/sf_ui"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -77,6 +104,9 @@
         android:layout_width="match_parent"
         android:fontFamily="@font/sf_ui"
         android:id="@+id/guideLineFiveChckBox"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        tools:ignore="RtlSymmetry"
         android:layout_height="wrap_content"
         app:layout_constraintVertical_bias="0.74"
         app:layout_constraintHorizontal_bias="0.00"
@@ -90,6 +120,9 @@
         android:fontFamily="@font/sf_ui"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        tools:ignore="RtlSymmetry"
         app:layout_constraintVertical_bias="0.85"
         app:layout_constraintHorizontal_bias="0.00"
         android:id="@+id/guideLineSixChckBox"
