@@ -3,6 +3,7 @@
     android:orientation="vertical"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    android:background="@color/sign_up_color"
     android:padding="20dp">
 
     <EditText
@@ -13,7 +14,8 @@
         android:hint="@string/name"
         android:inputType="text"
         android:minHeight="48dp"
-        android:textColorHint="#A1887F" />
+        android:textColor="@color/black"
+        android:textColorHint="@color/black" />
 
     <EditText
         android:id="@+id/usernameField"
@@ -23,7 +25,8 @@
         android:hint="@string/username"
         android:inputType="text"
         android:minHeight="48dp"
-        android:textColorHint="#A1887F" />
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"  />
 
     <EditText
         android:id="@+id/passwordField"
@@ -33,7 +36,8 @@
         android:hint="@string/password"
         android:inputType="textPassword"
         android:minHeight="48dp"
-        android:textColorHint="#A1887F" />
+        android:textColor="@color/black"
+        android:textColorHint="@color/black" />
 
     <Button
         android:id="@+id/okButton"

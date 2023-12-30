@@ -142,4 +142,5 @@
     <string name="receipt_overlay">Receipt_Overlay</string>
     <string name="vignette_overlay">vignette_overlay</string>
     <string name="background_for_guidelines">background_for_guidelines</string>
+    <string name="username_taken">Username Taken.</string>
 </resources>

@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ContentValues;
 import android.content.Intent;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.os.Build;
@@ -82,16 +83,23 @@ public class MainActivity extends AppCompatActivity {
                     values.put("username", usernameTextField.getText().toString());
                     values.put("password", passwordTextField.getText().toString());
 
-                    long newIdRow = db.insert("users", null, values);
-                    if (newIdRow == -1) {
-                        messageToast.setText(R.string.something_went_wrong);
+                    if (isUsernameTaken(db, values.getAsString("username"))) {
+                        messageToast.setText(R.string.username_taken);
                         messageToast.show();
+                        usernameTextField.setText("");
+                        usernameTextField.requestFocus();
                     } else {
-                        messageToast.setText(R.string.success_note);
-                        messageToast.show();
+                        long newIdRow = db.insert("users", null, values);
+                        if (newIdRow == -1) {
+                            messageToast.setText(R.string.something_went_wrong);
+                            messageToast.show();
+                        } else {
+                            messageToast.setText(R.string.success_note);
+                            messageToast.show();
+                            dialogObject.dismiss();
+                        }
                     }
                     db.close();
-                    dialogObject.dismiss();
                 }
             });
         });
@@ -113,5 +121,13 @@ public class MainActivity extends AppCompatActivity {
                 databaseHelper.close();
             }
         });
+    }
+
+    private boolean isUsernameTaken(SQLiteDatabase db, String username) {
+        String query = "SELECT * FROM users WHERE username=?";
+        Cursor cursor = db.rawQuery(query, new String[]{username});
+        boolean isTaken = cursor.getCount() > 0;
+        cursor.close();
+        return isTaken;
     }
 }
